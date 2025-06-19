@@ -97,12 +97,12 @@ class MainActivity : ComponentActivity() {
                 }
                         Column {
                             Button(onClick = {
-                                var NEXT = Intent(this@MainActivity, MainActivity2::class.java)
-                                startActivity(NEXT)
+                                var ADD = Intent(this@MainActivity, MainActivity2::class.java)
+                                startActivity(ADD)
                             })
 
                             {
-                                Text("NEXT")
+                                Text("ADD")
 
                             }
 
