@@ -1,0 +1,228 @@
+package com.example.musicplaylist
+
+import android.content.Intent
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Button
+import androidx.compose.material3.Divider
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
+import com.example.musicplaylist.ui.theme.MusicPlaylistTheme
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            var Artist_name by remember { mutableStateOf("") }
+            var Song_Title by remember { mutableStateOf("") }
+            var Artist by remember { mutableStateOf("") }
+
+
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.fillMaxSize()
+            ) {
+                Text(
+                    "5 STAR Music Playlist", fontSize = 30.sp,
+                    fontWeight = FontWeight.Black
+                )
+
+                Column {
+                    Text(text = "Drake")
+                }
+
+                Column {
+                    Text(text = "Kenny")
+                }
+
+                Column {
+                    Text(text = "Micheal")
+                }
+
+                Column {
+                    Text(text = "Weeknd")
+                }
+
+
+
+
+                Column {
+
+
+                    OutlinedTextField(
+                        value = Artist,
+                        onValueChange = { text ->
+                            Artist= text
+
+                        },
+                        placeholder = {
+                            Text("Enter Artist with 5 star ratings")
+                        }
+                    )
+
+                    Row {
+                        Button(onClick = {
+                            Artist_name = when (Song_Title) {
+                                "Drake" -> "Gods plan,9,Nice for what,TGG"
+                                "Kendrick" -> "hey now,NLU,HeartPt5,Hate"
+                                "Micheal" -> "Beat it, Thriller,Smooth Criminal,Love"
+                                "Weeknd" -> "OMW,HI,NOPE,WOW"
+
+                                else -> "Drake!"
+
+                            }
+
+
+                        }) {
+                            Text("Add to Playlist")
+
+                        }
+
+
+                        Button(onClick = {
+                            Artist_name = ""
+                            Song_Title= ""
+
+                        }) {
+                            Text("Reset")
+                        }
+
+
+                    }
+                    Text("Your Artist  $Artist_name :  $Song_Title")
+                }
+
+                        Column {
+
+
+                            Button(onClick = {
+                                var NEXT = Intent(this@MainActivity, MainActivity2::class.java)
+                                startActivity(NEXT)
+                            })
+
+                            {
+                                Text("NEXT")
+
+
+
+                            }
+
+
+                        }
+
+
+                    }
+
+
+                }
+            }
+        }
+
+package com.example.musicplaylist
+
+import android.content.Intent
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Button
+import androidx.compose.material3.Divider
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
+import com.example.musicplaylist.ui.theme.MusicPlaylistTheme
+
+class MainActivity2 : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            val Artist = arrayOf("Drake","Kenny","Micheal", "Weeknd")
+            Artist [0] = "Drake"
+            println(Artist[0])
+
+                Column (
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    modifier = Modifier.fillMaxSize()
+                    ) {
+                    Text(text = "Song Choice",fontSize = 15.sp,
+                        fontWeight = FontWeight.Black
+                    )
+                    
+                    Column {
+                        Text(text = "Drake - Gods Plan - 5 star")
+                    }
+                    
+                    Column {
+                        Text(text = "Kenny - NLU - 5 star")
+                    }
+                    
+                    Column {
+                        Text(text = "Micheal - Beat it - 5 star")
+                    }
+                    Column {
+                        Text(text = "Weeknd - OMW - 5 star")
+                    }
+
+                    Column {
+
+
+                        Button(onClick = {
+                            var HOME = Intent(this@MainActivity2, MainActivity::class.java)
+                            startActivity(HOME)
+                        })
+
+                        {
+                            Text("HOME")
+
+
+
+                        }
+
+
+                    }
+
+
+
+
+                }
+
+
+
+            }
+
+                }
+
+
+            }
+
+    
+
+
+
+
+
