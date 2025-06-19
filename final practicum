@@ -159,7 +159,7 @@ class MainActivity2 : ComponentActivity() {
                 modifier = Modifier.fillMaxSize()
             ) {
                 Text(
-                    text = "Song Choice", fontSize = 15.sp,
+                    text = "MUSIC ADDED", fontSize = 15.sp,
                     fontWeight = FontWeight.Black
                 )
                 Column {
