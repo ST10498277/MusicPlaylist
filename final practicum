@@ -109,8 +109,9 @@ class MainActivity : ComponentActivity() {
                         }
                 
                     Column {
-                        Button(onClick = { /*TODO*/ }) {
-                            Text(text = "EXIT")
+                        Button(onClick = { finish()}) {
+                            Text(text = "EXIT", 
+                            )
                         }
                     }
                 }
@@ -120,9 +121,6 @@ class MainActivity : ComponentActivity() {
 
                 }
             }
-
-
-
 package com.example.musicplaylist
 
 import android.content.Intent
@@ -215,5 +213,8 @@ class MainActivity2 : ComponentActivity() {
 }
 
     
+
+
+
 
 
