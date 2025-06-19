@@ -49,16 +49,16 @@ class MainActivity : ComponentActivity() {
                     fontWeight = FontWeight.Black
                 )
                 Column {
-                    Text(text = "Drake ")
+                    Text(text = "Drake ", fontSize = 20.sp )
                 }
                 Column {
-                    Text(text = "Kenny ")
+                    Text(text = "Kenny ", fontSize = 20.sp)
                 }
                 Column {
-                    Text(text = "Micheal ")
+                    Text(text = "Micheal ", fontSize = 20.sp)
                 }
                 Column {
-                    Text(text = "Weeknd ")
+                    Text(text = "Weeknd ", fontSize = 20.sp)
                 }
                 Column {
                     OutlinedTextField(
@@ -67,7 +67,7 @@ class MainActivity : ComponentActivity() {
                             Artist= text
                         },
                         placeholder = {
-                            Text("MUSIC PLAYLIST")
+                            Text("YOUR PLAYLIST FOR TODAY!!")
                         }
                     )
                     Row {
@@ -105,8 +105,6 @@ class MainActivity : ComponentActivity() {
                                 Text("NEXT")
 
                             }
-                            
-                            
 
                         }
                 
@@ -122,6 +120,8 @@ class MainActivity : ComponentActivity() {
 
                 }
             }
+
+
 
 package com.example.musicplaylist
 
@@ -151,9 +151,8 @@ class MainActivity2 : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val Artist = arrayOf("Drake", "Kenny", "Micheal", "Weeknd")
-            Artist[0] = "Drake,Kenny,Micheal,Weeknd"
             println(Artist[0])
-            var average = "Average 2.5 rating for all"
+            var average = "Average 2.5 rating "
 
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -164,16 +163,16 @@ class MainActivity2 : ComponentActivity() {
                     fontWeight = FontWeight.Black
                 )
                 Column {
-                    Text(text = "Drake - Gods Plan - 4 star - Rap Song")
+                    Text(text = "Drake - Gods Plan - 4 star - Rap Song", fontSize = 20.sp)
                 }
                 Column {
-                    Text(text = "Kenny - NLU - 2 star- - Best Love song")
+                    Text(text = "Kenny - NLU - 2 star- - Best Love song", fontSize = 20.sp)
                 }
                 Column {
-                    Text(text = "Micheal - Beat it - 1 star - Dance Song")
+                    Text(text = "Micheal - Beat it - 1 star - Dance Song", fontSize = 20.sp)
                 }
                 Column {
-                    Text(text = "Weeknd - OMW - 3 star - Memories")
+                    Text(text = "Weeknd - OMW - 3 star - Memories", fontSize = 20.sp)
 
                     Column {
                         OutlinedTextField(
@@ -216,8 +215,5 @@ class MainActivity2 : ComponentActivity() {
 }
 
     
-
-
-
 
 
