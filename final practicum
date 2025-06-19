@@ -2,6 +2,8 @@ package com.example.musicplaylist
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.FontsContract.Columns
+import android.text.style.BackgroundColorSpan
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
@@ -25,6 +27,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.example.musicplaylist.ui.theme.MusicPlaylistTheme
+import kotlin.system.exitProcess
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +38,8 @@ class MainActivity : ComponentActivity() {
             var Artist by remember { mutableStateOf("") }
 
 
+
+
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier.fillMaxSize()
@@ -43,40 +48,28 @@ class MainActivity : ComponentActivity() {
                     "5 STAR Music Playlist", fontSize = 30.sp,
                     fontWeight = FontWeight.Black
                 )
-
                 Column {
                     Text(text = "Drake ")
                 }
-
                 Column {
                     Text(text = "Kenny ")
                 }
-
                 Column {
                     Text(text = "Micheal ")
                 }
-
                 Column {
                     Text(text = "Weeknd ")
                 }
-
-
-
-
                 Column {
-
-
                     OutlinedTextField(
                         value = Artist,
                         onValueChange = { text ->
                             Artist= text
-
                         },
                         placeholder = {
                             Text("MUSIC PLAYLIST")
                         }
                     )
-
                     Row {
                         Button(onClick = {
                             Artist_name = when (Song_Title) {
@@ -88,14 +81,9 @@ class MainActivity : ComponentActivity() {
                                 else -> "Drake - Kenny - Micheal - Weeknd!"
 
                             }
-
-
                         }) {
                             Text("Add to Playlist")
-
                         }
-
-
                         Button(onClick = {
                             Artist_name = ""
                             Song_Title= ""
@@ -104,14 +92,10 @@ class MainActivity : ComponentActivity() {
                             Text("Reset")
                         }
 
-
                     }
                     Text("Your Artist  $Artist_name :  $Song_Title")
                 }
-
                         Column {
-
-
                             Button(onClick = {
                                 var NEXT = Intent(this@MainActivity, MainActivity2::class.java)
                                 startActivity(NEXT)
@@ -120,20 +104,25 @@ class MainActivity : ComponentActivity() {
                             {
                                 Text("NEXT")
 
-
-
                             }
-
+                            
+                            
 
                         }
-
+                
+                    Column {
+                        Button(onClick = { /*TODO*/ }) {
+                            Text(text = "EXIT")
+                        }
+                    }
+                }
 
                     }
 
 
                 }
             }
-        }
+
 
 package com.example.musicplaylist
 
@@ -147,6 +136,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Button
 import androidx.compose.material3.Divider
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -161,36 +151,45 @@ class MainActivity2 : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val Artist = arrayOf("Drake","Kenny","Micheal", "Weeknd")
-            Artist [0] = "Drake"
+            val Artist = arrayOf("Drake", "Kenny", "Micheal", "Weeknd")
+            Artist[0] = "Drake,Kenny,Micheal,Weeknd"
             println(Artist[0])
+            var average = "Average 2.5"
 
-                Column (
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    modifier = Modifier.fillMaxSize()
-                    ) {
-                    Text(text = "Song Choice",fontSize = 15.sp,
-                        fontWeight = FontWeight.Black
-                    )
-                    
-                    Column {
-                        Text(text = "Drake - Gods Plan - 4 star - Rap Song")
-                    }
-                    
-                    Column {
-                        Text(text = "Kenny - NLU - 2 star- - Best Love song")
-                    }
-                    
-                    Column {
-                        Text(text = "Micheal - Beat it - 1 star - Dance Song")
-                    }
-                    Column {
-                        Text(text = "Weeknd - OMW - 3 star - Memories")
-                    }
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.fillMaxSize()
+            ) {
+                Text(
+                    text = "Song Choice", fontSize = 15.sp,
+                    fontWeight = FontWeight.Black
+                )
+                Column {
+                    Text(text = "Drake - Gods Plan - 4 star - Rap Song")
+                }
+                Column {
+                    Text(text = "Kenny - NLU - 2 star- - Best Love song")
+                }
+                Column {
+                    Text(text = "Micheal - Beat it - 1 star - Dance Song")
+                }
+                Column {
+                    Text(text = "Weeknd - OMW - 3 star - Memories")
 
                     Column {
+                        OutlinedTextField(
+                            value = average,
+                            onValueChange = { num ->
+                                average = num
+                            },
+                            placeholder = {
+                                Text(text = "Average")
+                            }
+                        )
 
 
+                    }
+                    Column {
                         Button(onClick = {
                             var HOME = Intent(this@MainActivity2, MainActivity::class.java)
                             startActivity(HOME)
@@ -200,25 +199,22 @@ class MainActivity2 : ComponentActivity() {
                             Text("HOME")
 
 
-
                         }
 
 
                     }
 
 
-
-
-                }
-
-
-
-            }
-
                 }
 
 
             }
+
+        }
+
+
+    }
+}
 
     
 
