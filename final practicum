@@ -45,19 +45,19 @@ class MainActivity : ComponentActivity() {
                 )
 
                 Column {
-                    Text(text = "Drake")
+                    Text(text = "Drake ")
                 }
 
                 Column {
-                    Text(text = "Kenny")
+                    Text(text = "Kenny ")
                 }
 
                 Column {
-                    Text(text = "Micheal")
+                    Text(text = "Micheal ")
                 }
 
                 Column {
-                    Text(text = "Weeknd")
+                    Text(text = "Weeknd ")
                 }
 
 
@@ -73,7 +73,7 @@ class MainActivity : ComponentActivity() {
 
                         },
                         placeholder = {
-                            Text("Enter Artist with 5 star ratings")
+                            Text("MUSIC PLAYLIST")
                         }
                     )
 
@@ -85,7 +85,7 @@ class MainActivity : ComponentActivity() {
                                 "Micheal" -> "Beat it, Thriller,Smooth Criminal,Love"
                                 "Weeknd" -> "OMW,HI,NOPE,WOW"
 
-                                else -> "Drake!"
+                                else -> "Drake - Kenny - Micheal - Weeknd!"
 
                             }
 
@@ -174,18 +174,18 @@ class MainActivity2 : ComponentActivity() {
                     )
                     
                     Column {
-                        Text(text = "Drake - Gods Plan - 5 star")
+                        Text(text = "Drake - Gods Plan - 4 star - Rap Song")
                     }
                     
                     Column {
-                        Text(text = "Kenny - NLU - 5 star")
+                        Text(text = "Kenny - NLU - 2 star- - Best Love song")
                     }
                     
                     Column {
-                        Text(text = "Micheal - Beat it - 5 star")
+                        Text(text = "Micheal - Beat it - 1 star - Dance Song")
                     }
                     Column {
-                        Text(text = "Weeknd - OMW - 5 star")
+                        Text(text = "Weeknd - OMW - 3 star - Memories")
                     }
 
                     Column {
@@ -221,8 +221,6 @@ class MainActivity2 : ComponentActivity() {
             }
 
     
-
-
 
 
 
